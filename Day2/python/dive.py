@@ -50,6 +50,6 @@ def get_aimed_horizontal_position(data: tuple) -> int:
     return hop * depth
 
 if __name__ == "__main__":
-    data = read_data("../input/task2.txt")
+    data = read_data("../input/input.txt")
     res1 = get_final_horizontal_position(data)
     res2 = get_aimed_horizontal_position(data)

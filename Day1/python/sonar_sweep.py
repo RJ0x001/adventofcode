@@ -48,6 +48,6 @@ def count_increased_measurement_window(data: tuple) -> int:
 
 
 if __name__ == "__main__":
-    data = read_data("../input/task1.txt")
+    data = read_data("../input/input.txt")
     res1 = count_increased_measurement(data)
     res2 = count_increased_measurement_window(data)

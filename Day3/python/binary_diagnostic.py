@@ -33,17 +33,18 @@ def get_rate(data: tuple, type: str) -> int:
     else:
         return  int(''.join(x for x in [min(d, key=lambda x: d[x]) for d in gamma_list]), 2)
 
-def get_life_support_rating(data: tuple) -> int:
+@timer
+def get_life_support_rating(data1: tuple) -> int:
     """
-    Calculate life support rating by multiply the oxygen generator rating (23) by the CO2 scrubber rating (10)
+    Calculate life support rating by multiply the oxygen generator rating by the CO2 scrubber rating
 
     Args:
         data (tuple): data tuple
 
     Returns:
         int: life support rating
-    101000100001
     """
+    data = read_data("../input/input.txt")
     elem = dict()
     input_elem_len = len(data[0])
     oxygen_data = data

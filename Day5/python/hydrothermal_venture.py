@@ -1,8 +1,3 @@
-import pprint
-import copy
-from time import sleep
-
-
 def read_data(file_path: str) -> tuple:
     """
     Read task input data and create list for solve
@@ -32,11 +27,10 @@ def count_overlap(data):
     counter = 0
     overlap_set = set()
     grid = [[None for _ in range(1000)] for _ in range(1000)]
-    # grid = [[None for _ in range(10)] for _ in range(10)]
     for row in data:
         y1, x1 = map(int, row[0].split(','))
         y2, x2 = map(int, row[1].split(','))
-        
+        # task 1
         if x1 == x2 or y1 == y2:
             
             if x1 == x2:
@@ -79,11 +73,9 @@ def count_overlap(data):
                     counter = mark_dot(x1, y1, counter, grid, overlap_set)
                     x1 += 1
                     y1 += 1
-    # pprint.pprint(grid)
     return counter
 
 
 if __name__ == "__main__":
     raw_data = read_data("../input/input.txt")
-    # raw_data = read_data("../input/input copy.txt")
-    pprint.pprint(count_overlap(raw_data))
+    count_overlap(raw_data)
